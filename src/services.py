@@ -1,6 +1,18 @@
 import random
 
 
+def get_arifmetical_sum(seq: list) -> int:
+    numbers_dict = get_numbers_dict(seq)
+    numbers_sum = 0
+    count = 0
+    for key, value in numbers_dict.items():
+        if value > 1:
+            numbers_sum += key * value
+            count += value
+
+    return numbers_sum / value
+
+
 def get_random_seq():
     return [random.randint(1, 6) for _ in range(5)]
 
