@@ -14,8 +14,18 @@ def init_users_dict(users: int) -> dict:
 
 
 def main():
-    users_number = int(input("Введите кол-во игроков: "))
+    users_number = 0
+
+    while users_number < 2:
+        try:
+            users_number = int(input("Введите кол-во игроков: "))
+        except KeyboardInterrupt:
+            raise KeyError("close")
+        except:
+            pass
+
     users = init_users_dict(users_number)
+
     round_now = 1
     round_count = 2
     while round_now <= round_count:
