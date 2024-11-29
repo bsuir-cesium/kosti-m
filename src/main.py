@@ -3,7 +3,15 @@ from src.services import get_random_seq, get_points
 
 def main():
     users: dict[int, int] = {}
-    users_number = int(input("Введите кол-во игроков: "))
+    users_number = 0
+    while users_number < 2:
+        try:
+            users_number = int(input("Введите кол-во игроков: "))
+        except KeyboardInterrupt:
+            raise KeyError("close")
+        except:
+            pass
+
     round_now = 1
     round_count = 2
     while round_now <= round_count:
