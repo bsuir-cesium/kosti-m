@@ -61,7 +61,21 @@ def main():
             max = data["points"]
             victory_user = user
 
-    print(f"Победил игрок: {victory_user}")
+    victory_user_second = 0
+    max = 0
+    for user, data in users.items():
+        if user == victory_user:
+            continue
+        a = data["points"]
+        print(f"Игрок №{user} - Сумма баллов: {a}")
+        if data["points"] > max:
+            max = data["points"]
+            victory_user_second = user
+
+    if users[victory_user]["points"] == users[victory_user_second]["points"]:
+        print("Несколько победителей")
+    else:
+        print(f"Победил игрок: {victory_user}")
 
 
 if __name__ == "__main__":

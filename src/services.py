@@ -9,7 +9,8 @@ def get_arifmetical_sum(seq: list) -> int:
         if value > 1:
             numbers_sum += key * value
             count += value
-
+    if count == 0:
+        return 0
     return numbers_sum / count
 
 
