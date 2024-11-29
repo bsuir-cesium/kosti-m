@@ -40,11 +40,13 @@ def main():
             print("Рандомная последовательность: ", seq)
             points = get_points(seq)
 
+            total_points = points * 50 + get_arifmetical_sum(seq) * 10
+
             if users[user_now]["prem"] == False and points == 7:
                 users[user_now]["prem"] = True
                 total_points += 100
+                print("Начислена премия игроку: ", user_now)
 
-            total_points = points * 50 + get_arifmetical_sum(seq) * 10
             print("Кол-во очков: ", total_points)
             users[user_now]["points"] += total_points
             user_now += 1
