@@ -53,14 +53,22 @@ def main():
         round_now += 1
 
     print("Итоги игры:")
-    victory_user = 0
+    victory_users = []
     max = 0
     for user, data in users.items():
         a = data["points"]
         print(f"Игрок №{user} - Сумма баллов: {a}")
         if data["points"] > max:
             max = data["points"]
-            victory_user = user
+
+    for user, data in users.items():
+        if data["points"] == max:
+            victory_users.append(user)
+
+    if len(victory_users) == 1:
+        print(f"Победил игрок: {victory_users[0]}")
+    else:
+        print("Ничья")
 
 
 if __name__ == "__main__":
