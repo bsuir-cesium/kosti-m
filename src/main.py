@@ -30,11 +30,10 @@ def main():
     round_count = 10
     while round_now <= round_count:
         user_now = 1
-        print("")
-        print("Текущий раунд: ", round_now)
+        print("\n\n----==== Текущий раунд: ", round_now, "====----")
         while user_now <= users_number:
             total_points = 0
-            print("Сейчас ход игрока №", user_now)
+            print("\nСейчас ход игрока №", user_now)
             input("Нажмите Enter для продолжения...")
             # seq = get_random_seq(True)
             seq = get_random_seq()
@@ -53,12 +52,12 @@ def main():
             user_now += 1
         round_now += 1
 
-    print("Итоги игры:")
+    print("\n\n------====== Итоги игры: ======------")
     victory_users = []
     max = 0
     for user, data in users.items():
         a = data["points"]
-        print(f"Игрок №{user} - Сумма баллов: {a}")
+        print(f" ---=== Игрок №{user} - Сумма баллов: {a}")
         if data["points"] > max:
             max = data["points"]
 
@@ -70,6 +69,8 @@ def main():
         print(f"Победил игрок: {victory_users[0]}")
     else:
         print("Ничья")
+
+    print()
 
 
 if __name__ == "__main__":
