@@ -47,7 +47,7 @@ def main():
                 total_points += 100
                 print("Начислена премия игроку: ", user_now)
 
-            print("Кол-во баллов: ", total_points)
+            print("Кол-во баллов: ", round(total_points))
             users[user_now]["points"] += total_points
             user_now += 1
         round_now += 1
@@ -56,7 +56,7 @@ def main():
     victory_users = []
     max = 0
     for user, data in users.items():
-        a = data["points"]
+        a = round(data["points"])
         print(f" ---=== Игрок №{user} - Сумма баллов: {a}")
         if data["points"] > max:
             max = data["points"]
