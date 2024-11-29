@@ -14,8 +14,10 @@ def get_arifmetical_sum(seq: list) -> int:
     return numbers_sum / count
 
 
-def get_random_seq() -> list:
+def get_random_seq(flag: bool = False) -> list:
     # return [1, 1, 1, 1, 1]
+    if flag:
+        return [int(num) for num in input().split()]
     return [random.randint(1, 6) for _ in range(5)]
 
 

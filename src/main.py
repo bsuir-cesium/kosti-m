@@ -36,6 +36,7 @@ def main():
             total_points = 0
             print("Сейчас ход игрока №", user_now)
             input("Нажмите Enter для продолжения...")
+            # seq = get_random_seq(True)
             seq = get_random_seq()
             print("Рандомная последовательность: ", seq)
             points = get_points(seq)
