@@ -14,7 +14,8 @@ def get_arifmetical_sum(seq: list) -> int:
     return numbers_sum / count
 
 
-def get_random_seq():
+def get_random_seq() -> list:
+    # return [1, 1, 1, 1, 1]
     return [random.randint(1, 6) for _ in range(5)]
 
 
