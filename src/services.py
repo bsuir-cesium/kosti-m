@@ -10,7 +10,7 @@ def get_arifmetical_sum(seq: list) -> int:
             numbers_sum += key * value
             count += value
 
-    return numbers_sum / value
+    return numbers_sum / count
 
 
 def get_random_seq():
