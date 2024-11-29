@@ -1,4 +1,4 @@
-from src.services import get_random_seq, get_points
+from src.services import get_random_seq, get_points, get_arifmetical_sum
 
 
 def init_users_dict(users: int) -> dict:
@@ -27,7 +27,7 @@ def main():
     users = init_users_dict(users_number)
 
     round_now = 1
-    round_count = 2
+    round_count = 10
     while round_now <= round_count:
         user_now = 1
         print("")
@@ -44,9 +44,9 @@ def main():
                 users[user_now]["prem"] = True
                 total_points += 100
 
-            total_points = points * 50 + 1111 * 10
-            print("Кол-во очков: ", points)
-            users[user_now]["points"] += points
+            total_points = points * 50 + get_arifmetical_sum(seq) * 10
+            print("Кол-во очков: ", total_points)
+            users[user_now]["points"] += total_points
             user_now += 1
         round_now += 1
 
